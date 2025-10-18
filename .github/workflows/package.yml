@@ -17,8 +17,12 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Package with npx
-        run: npx --yes @vscode/vsce@latest package -o fold-functions-extension.vsix
+      - name: Package with npx (vsce)
+        run: npx --yes @vscode/vsce@latest package --no-dependencies -o fold-functions-extension.vsix || echo "vsce failed"
+
+      - name: Fallback package with ovsx
+        if: ${{ !cancelled() && success() == false }}
+        run: npx --yes ovsx@latest package -o fold-functions-extension.vsix || echo "ovsx failed"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4

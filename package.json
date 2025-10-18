@@ -7,6 +7,12 @@
   "engines": {
     "vscode": "^1.50.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JmXtl3/vscode.git"
+  },
+  "author": "JmXtl3",
+  "license": "MIT",
   "categories": [
     "Other"
   ],
