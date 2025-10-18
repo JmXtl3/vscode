@@ -1,5 +1,7 @@
 # 折叠函数工具 (fold-functions-extension)
 
+![CI](https://github.com/JmXtl3/vscode/actions/workflows/package.yml/badge.svg)
+
 在编辑器右键菜单添加四个命令：折叠当前函数、展开当前函数、折叠全部函数、展开全部函数。
 
 开发/打包：
