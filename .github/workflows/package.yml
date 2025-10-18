@@ -1,6 +1,8 @@
 name: Package VS Code Extension
 
 on:
+  push:
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
