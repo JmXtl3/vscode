@@ -17,17 +17,8 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install dependencies
-        run: npm ci || npm install
-
-      - name: Compile
-        run: npm run compile || echo "skip compile if prebuilt"
-
-      - name: Install vsce
-        run: npm install -g @vscode/vsce
-
-      - name: Package
-        run: vsce package -o fold-functions-extension.vsix
+      - name: Package with npx
+        run: npx --yes @vscode/vsce@latest package -o fold-functions-extension.vsix
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
